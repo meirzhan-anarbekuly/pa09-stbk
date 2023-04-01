@@ -16,8 +16,8 @@ public class GenericMethod {
 
         Integer[] intNumbers = {1, 2, 3, 4, 5};
         Double[] doubleNumbers = {1.1, 2.2, 3.3};
-        GenericMethod.<Integer>add(intNumbers);
-        GenericMethod.<Double>add(doubleNumbers);
+        System.out.println(GenericMethod.<Integer>add(intNumbers));
+        System.out.println(GenericMethod.<Double>add(doubleNumbers));
     }
 
     public static void add(ArrayList<Number> numbers) {
@@ -40,11 +40,11 @@ public class GenericMethod {
         System.out.println(total);
     }
 
-    public static <T extends Number> void add(T[] values) {
+    public static <T extends Number> double add(T[] values) {
         double total = 0;
         for (int i = 0; i < values.length; i++) {
             total += values[i].doubleValue();
         }
-        System.out.println(total);
+        return total;
     }
 }
